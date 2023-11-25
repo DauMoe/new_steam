@@ -1,13 +1,13 @@
-// {
-//   // "extends": "@tsconfig/svelte/tsconfig.json",
-//   "compilerOptions": {
-//     "target": "ES6",
-//     "module": "CommonJS",
-//     "moduleResolution": "node",
-//     "strict": true,
-//     "baseUrl": "./",
-//     "types": ["svelte"]
-//   },
-//   "include": ["src/**/*.ts", "src/index.js"],
-//   "exclude": ["node_modules/*", "public/*"]
-// }
+{
+  // "extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "baseUrl": "./",
+    "types": ["svelte"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/*", "public/*"]
+}

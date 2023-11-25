@@ -1,5 +1,6 @@
 <script>
+  import './styles/index.scss';
   let number = 0;
 </script>
 
-<h1>Count: {number}</h1>
+<h2 href="akk">Count: {number}</h2>
