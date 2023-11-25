@@ -1,0 +1,26 @@
+{
+  "name": "svelte_scratch_project",
+  "version": "0.0.1",
+  "description": "My first Svelte project that is build manually",
+  "scripts": {
+    "dev": "webpack serve --open --config ./webpack.config.js --env=development",
+    "prod": "webpack serve --open --config ./webpack.config.js --env=production"
+  },
+  "dependencies": {
+    "svelte": "^4.2.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "html-webpack-plugin": "^5.5.3",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "svelte-preprocess": "^5.1.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0",
+    "webpack-merge": "^5.10.0",
+    "svelte-loader": "^3.1.9"
+  }
+}
