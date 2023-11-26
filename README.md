@@ -3,7 +3,7 @@
 - Optimize option
 
 # Tools:
-- [Font converter](https://transfonter.org/): convert and generate `@font-face` to make sure it works on every single browser
+- ~[Font converter](https://transfonter.org/): convert and generate `@font-face` to make sure it works on every single browser~
 
 # References:
 - Thank to [Steam Redesign](https://www.figma.com/community/file/1302616100790619521/embed) 
