@@ -8,6 +8,14 @@ module.exports = {
     // static: path.join(__dirname, '/dist/'),
     host: 'localhost',
     port: 8080,
-    hot: true
+    client: {
+      reconnect: 3,
+      overlay: {
+        errors: true,
+        warnings: false, //Hide warning overlay
+        runtimeErrors: true,
+      },
+    },
+    open: false
   }
 };
