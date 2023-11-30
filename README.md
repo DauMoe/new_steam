@@ -1,9 +1,19 @@
 # TODO:
-1. Finish webpack.config.js
-- Optimize option
+1. Finish webpack.config.js  
+-[x] Optimize option
 
 # Tools:
-- ~[Font converter](https://transfonter.org/): convert and generate `@font-face` to make sure it works on every single browser~
+
+# Source tree
+│──src  
+│  │   index.js: Main entry  
+│  │   index.svelte: Container for svelte component  
+│  │  
+│  ├───assets: images, icons, etc  
+│  ├───components: container whole components  
+│  ├───styles: container styling (scss, sass) for components  
+│  │  
+│  └───views: the views, each view is corresponding to a screen
 
 # References:
 - Thank to [Steam Redesign](https://www.figma.com/community/file/1302616100790619521/embed) 

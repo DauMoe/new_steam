@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { merge } = require("webpack-merge");
 const devWebpack = require('./webpack/webpack.dev.js');
 const prodWebpack = require('./webpack/webpack.prod.js');
@@ -10,7 +11,7 @@ module.exports = env => {
     isProd ? prodWebpack : devWebpack,
    {
    entry: {
-     'index': path.join(__dirname, 'src', 'index.js'),
+     'index': path.join(__dirname, 'src', 'index.ts'),
    },
    output: {
      path: path.join(__dirname, 'dist'),
@@ -24,19 +25,14 @@ module.exports = env => {
       loader: 'ts-loader',
       options: {
         transpileOnly: !isProd,
-        configFile: './tsconfig.json'
+        configFile: path.resolve(__dirname, 'tsconfig.json')
       }
     }, {
-       test: /\.s[ac]ss$/i,
-       use: [
-         // Creates `style` nodes from JS strings
-         "style-loader",
-         // Translates CSS into CommonJS
-         "css-loader",
-         // Compiles Sass to CSS
-         "sass-loader",
-         //Consider about using resolve-url-loader for sass: https://github.com/bholloway/resolve-url-loader/blob/v5/packages/resolve-url-loader/README.md
-       ],
+      test: /\.s[ac]ss$/i,
+      include: [
+        path.resolve(__dirname, 'src', 'styles')
+      ],
+      use: ["style-loader", "css-loader", "sass-loader"]
      }, {
       test: /\.svelte$/,
       loader: 'svelte-loader',
@@ -69,17 +65,27 @@ module.exports = env => {
        resolve: {
          fullySpecified: false
        }
-     }]
+     }, {
+      test: /\.(png|svg|jpg|gif)$/,
+      loader: 'file-loader',
+      options: { name: !isProd ? '[name].[ext]' : '[name].[contenthash].[ext]', outputPath: 'assets' }
+    }]
    },
    resolve: {
      extensions: ['.mjs', '.js', '.svelte', '.scss', '.sass', '.css'],
      mainFields: ['svelte', 'browser', 'module', 'main'],
-     conditionNames: ['svelte', 'browser', 'import']
+     conditionNames: ['svelte', 'browser', 'import'],
+     modules: [
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, 'src')
+     ]
    },
    plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: "Welcome to Steam Redesign"
+      title: 'Welcome to Steam',
+      template: path.resolve(__dirname, 'src', 'index.html'),
+      favicon: path.resolve(__dirname, 'src', 'assets', 'icons', 'SteamLogoBlack.svg'),
     }),
    ]
  });

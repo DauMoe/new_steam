@@ -1,12 +1,14 @@
 {
-  // "extends": "@tsconfig/svelte/tsconfig.json",
+  "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
     "target": "ES6",
     "module": "CommonJS",
     "moduleResolution": "node",
     "strict": true,
-    "baseUrl": "./",
-    "types": ["svelte"]
+    "baseUrl": "./src",
+    "types": ["svelte"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules/*", "public/*"]

@@ -6,6 +6,7 @@ $system-grey: #67707B;
 $system-dark-grey: #3D4450;
 $system-darker-grey: #23262E;
 $system-darkest-grey: #0E141B;
+$system-light: #F3F3F3;
 
 /* Store blue greys */
 $store-lightest-grey: #CCD8E3;
@@ -17,7 +18,7 @@ $store-darker-grey: #1B2838;
 $store-darkest-grey: #000F18;
 
 /* Gradients */
-$store-bg-gradient: linear-gradient(180deg, var(--gpStoreDarkGrey) 0%, var(--gpStoreDarkerGrey) 80%);
+$store-bg-gradient: linear-gradient(180deg, $store-dark-grey 0%, $store-darker-grey 80%);
 $library-bg-gradient: radial-gradient(farthest-corner at 40px 40px, #3D4450 0%, #23262E 80%);
 
 /* Colors */
@@ -48,3 +49,5 @@ $neutral-light-soft: rgba(235, 246, 255, 0.20);
 $neutral-light-medium: rgba(235, 246, 255, 0.30);
 $neutral-light-hard: rgba(235, 246, 255, 0.40);
 $neutral-light-harder: rgba(235, 246, 255, 0.50);
+
+$bg-hightlight: #1E2329

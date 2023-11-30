@@ -1,6 +1,6 @@
 <script>
   import './styles/index.scss';
-  let number = 0;
+  import ClientStorePage from './views/home/ClientStorePage.svelte';
 </script>
 
-<h2 href="akk">Count: {number}</h2>
+<ClientStorePage/>
