@@ -3,18 +3,25 @@
 $bubble-count-size: 16;
 
 .rectangle {
+  display: table;
   cursor: pointer;
   position: relative;
-  padding: 6px 16px;
-  height: fit-content;
-  border-radius: 3px;
-  background-color: base.$bg-hightlight;
   margin: {
     right: #{$bubble-count-size/10}px;
   }
+  
+  &.with-background {
+    padding: 6px 16px;
+    height: fit-content;
+    border-radius: 3px;
+    background-color: base.$bg-hightlight;
+  }
+
   & > img {
-    width: 25px;
-    height: 25px;
+    display: table-cell;
+    max-width: 25px;
+    min-height: 25px;
+    vertical-align: middle;
   }
 
   &__circle {
@@ -31,4 +38,8 @@ $bubble-count-size: 16;
     justify-content: center;
     align-items: center;
   }
+}
+
+.setting-bg {
+  background-color: rgba(118, 128, 140, 0.10);
 }

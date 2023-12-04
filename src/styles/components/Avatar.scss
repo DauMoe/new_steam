@@ -1,3 +1,38 @@
+@use "./../base" as base;
+
 .avatar {
+  background-color: base.$bg-hightlight;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  cursor: pointer;
   
+  &__img {
+    width: 37px;
+    height: 37px;
+    margin: {
+      left: 3px;
+      right: 8px;
+    }
+  }
+
+  &__username {
+    color: base.$text-main;
+    margin: {
+      right: 8px;
+    }
+  }
+
+  &__balance {
+    margin: {
+      right: 8px;
+    }
+    color: base.$text-dim;
+  }
+
+  &__expand-icon {
+    width: 20px;
+    height: 20px;
+  }
 }

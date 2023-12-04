@@ -1,1 +1,0 @@
-export { default as OptionHeader } from './OptionHeader.svelte';

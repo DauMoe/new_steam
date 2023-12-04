@@ -72,7 +72,7 @@ module.exports = env => {
     }]
    },
    resolve: {
-     extensions: ['.mjs', '.js', '.svelte', '.scss', '.sass', '.css'],
+     extensions: ['.mjs', '.js', '.ts', '.svelte', '.scss', '.sass', '.css'],
      mainFields: ['svelte', 'browser', 'module', 'main'],
      conditionNames: ['svelte', 'browser', 'import'],
      modules: [

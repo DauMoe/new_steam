@@ -1,0 +1,51 @@
+@use './../base' as base;
+
+.second-header {
+  width: 100%;
+  height: 57px;
+  background-color: base.$bg-tertiary;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  & > * {
+    height: 100%;
+  }
+
+  &__list {
+    display: table;
+    height: calc(100% - 12px);
+    color: base.$text-main;
+    & > * {
+      display: table-cell;
+      vertical-align: middle;
+      text-transform: capitalize;
+      height: 100%;
+      padding: {
+        left: 29px;
+        right: 29px;
+      }
+      border-spacing: 7px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 400;
+      border-radius: 3px;
+      transition: background-color .2s;
+
+      &:first-child {
+        margin-left: 10px;
+      }
+
+      &:hover {
+        background-color: base.$color-secondary;
+      }
+    }
+  }
+
+  &__utility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

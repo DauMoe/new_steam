@@ -6,7 +6,6 @@ $system-grey: #67707B;
 $system-dark-grey: #3D4450;
 $system-darker-grey: #23262E;
 $system-darkest-grey: #0E141B;
-$system-light: #F3F3F3;
 
 /* Store blue greys */
 $store-lightest-grey: #CCD8E3;
@@ -50,4 +49,18 @@ $neutral-light-medium: rgba(235, 246, 255, 0.30);
 $neutral-light-hard: rgba(235, 246, 255, 0.40);
 $neutral-light-harder: rgba(235, 246, 255, 0.50);
 
-$bg-hightlight: #1E2329
+$bg-main: $system-darkest-grey;
+$bg-hightlight: #1E2329;
+$bg-hover: #313843;
+$bg-secondary: #14344B;
+$bg-tertiary: #212B45;
+
+$text-main: #F3F3F3; //system-light
+$text-dim: #76808C;
+
+$color-primary: #66C0F4;
+$color-secondary: #4B619B;
+
+$accent-green: #A1CD44;
+$accent-red: #CD5444;
+$accent-yellow: #C1B15F;

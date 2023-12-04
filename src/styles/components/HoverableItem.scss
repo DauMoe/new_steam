@@ -1,0 +1,27 @@
+@use './../base/' as base;
+
+.hoverable {
+  display: table;
+  padding: {
+    left: 29px;
+    right: 29px;
+  };
+  height: calc(100% - 12px);
+  border-radius: 3px;
+  transition: background-color .2s;
+
+  &__text {
+    color: base.$text-main;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: base.$bg-hover;
+  }
+
+  &.selected {
+    background-color: base.$color-secondary;
+  }
+}

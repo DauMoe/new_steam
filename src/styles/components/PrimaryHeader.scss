@@ -1,6 +1,6 @@
 @use './../base' as base;
 
-.option-header {
+.primary-header {
   height: 60px;
   width: 100vw;
   background: base.$system-darkest-grey;
@@ -33,7 +33,7 @@
 
   &__logo {
     display: inline-block;
-    height: 20px;
+    height: 22px;
   }
 
   &__list {
@@ -42,11 +42,34 @@
     align-items: center;
     flex: 1;
     margin-left: 66px;
+
     & > * {
+      cursor: pointer;
       text-transform: uppercase;
-      font-weight: 700;
-      color: base.$system-light;
-      font-size: 16px;
+      color: base.$text-main;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      transition: color .3s;
+
+      &:hover, &.selected {
+        color: base.$chalky-blue;
+      }
+    }
+  }
+
+  &__utility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: {
+      left: 50px;
+      right: 15px;
+    }
+
+    & > p {
+      color: base.$text-dim;
     }
   }
 }
