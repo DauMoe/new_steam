@@ -1,3 +1,47 @@
-p {
-  font-size: 20px;
+@use "./colors.scss" as *;
+
+.clientWrapper {
+  width: 100%;
+  margin: 0;
+  height: 60px;
+  background-color: $gpStoreDarkestGrey;
+  user-select: none;
+  & > * {
+    height: 100%;
+  }
+}
+
+.logo {
+  margin: auto 10px;
+  vertical-align: middle;
+}
+
+.navigator {
+  margin-left: 10px;
+  display: inline-block;
+  & > * {
+    vertical-align: middle;
+  }
+}
+
+.primaryHeaderLeft {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  display: inline-flex;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.clientItem {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $gpSystemLightestGrey;
+  cursor: pointer;
+  margin-right: 68px;
+
+  & > .selected {
+    color: $gpColor-ChalkyBlue;
+  }
 }
