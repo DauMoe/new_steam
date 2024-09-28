@@ -19,5 +19,9 @@ export const clientStore = writable({
       selected: false
     }],
     secondary: []
-  }
+  },
+  username: "DauMoe",
+  avatarUrl: "",
+  balance: "$10",
+  badgeNumber: 20
 });
