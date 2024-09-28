@@ -1,4 +1,5 @@
 @use "./fonts.scss" as *;
+@use "./colors.scss" as *;
 
 body {
   font-family: "Motiva Sans", Arial, sans-serif;
@@ -9,4 +10,92 @@ body {
 
 .resizeImage {
   background-size: contain;
+}
+
+@for $i from 1 through 30 {
+  .w-#{$i} {
+    width: #{$i}px;
+  }
+  .h-#{$i} {
+    height: #{$i}px;
+  }
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 37px;
+  border-radius: 4px;
+  background-color: $gpStoreDarkerGrey;
+  display: inline-block;
+  line-height: 34px; // Set line-height equal to height
+  text-align: center; // Center horizontally if desired
+
+  & > img {
+    vertical-align: middle;
+    max-height: 100%;
+    background-size: contain;
+  }
+}
+
+.notification {
+  display: inline-block;
+  width: 56px;
+  position: relative;
+  cursor: pointer;
+  & > span {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: $gpColor-BlueHi;
+    font-size: 11px;
+    top: -3px;
+    left: 43px;
+    line-height: 18px;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.2em;
+  }
+}
+
+.dropdownProfile {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 39px;
+  background-color: $gpStoreDarkerGrey;
+  border-radius: 4px;
+  padding: 0 10px;
+
+  & > img {
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+  }
+
+  & > .username, .balance {
+    margin-left: 10px;
+    font-size: 13px;
+    color: $gpSystemLightestGrey;
+  }
+
+  & > .balance {
+    color: $gpSystemGrey;
+    margin-right: 20px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 5px);
+      transform: translateY(-40%);
+      width: 9px;
+      height: 5px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("./../../lib/assets/icons/ArrowDownWhite.png");
+    }
+  }
 }

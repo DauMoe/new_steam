@@ -27,12 +27,17 @@
 .primaryHeaderLeft {
   width: 30%;
   height: 100%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   display: inline-flex;
   margin-left: 20px;
   overflow: hidden;
 }
+
+// .primaryHeaderRight {
+//   display: inline-flex;
+//   width: 40%;
+// }
 
 .clientItem {
   text-transform: uppercase;
