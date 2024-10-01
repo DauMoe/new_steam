@@ -19,6 +19,21 @@ body {
   .h-#{$i} {
     height: #{$i}px;
   }
+  .ml-#{$i} {
+    margin-left: #{$i}px;
+  }
+
+  .mr-#{$i} {
+    margin-right: #{$i}px;
+  }
+
+  .pl-#{$i} {
+    padding-left: #{$i}px;
+  }
+
+  .pr-#{$i} {
+    padding-right: #{$i}px;
+  }
 }
 
 .iconWrapper {
@@ -66,7 +81,8 @@ body {
   height: 39px;
   background-color: $gpStoreDarkerGrey;
   border-radius: 4px;
-  padding: 0 10px;
+  padding: 0 15px;
+  margin-right: 60px;
 
   & > img {
     width: 25px;
@@ -98,4 +114,8 @@ body {
       background-image: url("./../../lib/assets/icons/ArrowDownWhite.png");
     }
   }
+}
+
+.pointer {
+  cursor: pointer;
 }

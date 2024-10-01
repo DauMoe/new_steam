@@ -10,7 +10,7 @@
   }
 </script>
 
-<div class="notification">
+<div class="notification mr-10">
   <Icon iconName={RingLogo} border/>
   {#if showBadge}
     <span>{handleBadgeNumber(badgeNumber)}</span>

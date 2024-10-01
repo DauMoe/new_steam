@@ -1,6 +1,6 @@
 <script>
   import "$lib/styles/_client.scss";
-	import { ArrowLeft, ArrowRight, FriendsLogo, FullsizeLogo, RingLogo } from "$lib/components/Icon/IconName";
+	import { ArrowLeft, ArrowRight, CloseLogo, CopyLogo, DashLogo, FriendsLogo, FullsizeLogo, RingLogo } from "$lib/components/Icon/IconName";
 	import ClientItem from "./ClientItem.svelte";
 	import Icon from "$lib/components/Icon/Icon.svelte";
 	import { get } from "svelte/store";
@@ -29,8 +29,13 @@
   </div>
 
   <div class="primaryHeaderRight">
-    <Icon iconName={FriendsLogo} border/>
+    <Icon iconName={FriendsLogo} border className={"mr-10 pointer"}/>
     <Notification {badgeNumber} />
     <DropdownProfile />
+    <span class={"headerText"}>Help</span>
+    <span class={"headerText dropdown"}>View</span>
+    <Icon iconName={DashLogo} className={"w-20 mr-15 pointer"}/>
+    <Icon iconName={CopyLogo} className={"w-20 mr-15 pointer"}/>
+    <Icon iconName={CloseLogo} className={"w-20 mr-25 pointer"}/>
   </div>
 </div>

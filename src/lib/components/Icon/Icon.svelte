@@ -71,11 +71,11 @@
 
 {#if iconName}
   {#if border}
-    <div class="iconWrapper">
+    <div class={`iconWrapper  ${className}`}>
       <img 
         src={iconInfo?.src} 
         alt={iconName} 
-        class={`resizeImage ${className}`} 
+        class={`resizeImage`} 
         style={iconInfo?.customStyle}
       />
     </div>
