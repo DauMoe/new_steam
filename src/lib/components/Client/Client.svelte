@@ -8,7 +8,7 @@
 	import Notification from "../Icon/Notification.svelte";
 	import DropdownProfile from "../DropdownProfile.svelte";
 
-  $: ({ header: { primary }, badgeNumber, username, balance } = get(clientStore));
+  $: ({ header: { client }, badgeNumber, username, balance } = get(clientStore));
 </script>
 
 <div class="clientWrapper">
@@ -21,9 +21,11 @@
   </a>
 
   <div class="primaryHeaderLeft">
-    {#if Array.isArray(primary)}
-      {#each primary as primaryItem, index}
-        <ClientItem name={primaryItem.title} selected={primaryItem.selected} />
+    {#if Array.isArray(client)}
+      {#each client as clientItem}
+        {#key `primary_${clientItem.id}`}
+          <ClientItem name={clientItem.title} selected={clientItem.selected} />
+        {/key}
       {/each}
     {/if}
   </div>
