@@ -1,6 +1,9 @@
 <script lang="ts">
+	import Clickable from "../Clickable.svelte";
+
   export let name: string;
   export let selected: boolean = false;
+  export let onClick = (item: any) => {};
 
   function handleName(name: string) {
     if (name.startsWith("$")) {
@@ -17,6 +20,6 @@
   $: title = handleName(name);
 </script>
 
-<div class="clientItem">
+<Clickable className="clientItem" {onClick}>
   <span class={selected ? "selected" : ""}>{title}</span>
-</div>
+</Clickable>

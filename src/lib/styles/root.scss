@@ -40,7 +40,7 @@ body {
   width: 56px;
   height: 37px;
   border-radius: 4px;
-  background-color: $gpStoreDarkerGrey;
+  background-color: $bgHighlight;
   display: inline-block;
   line-height: 34px; // Set line-height equal to height
   text-align: center; // Center horizontally if desired
@@ -79,7 +79,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 39px;
-  background-color: $gpStoreDarkerGrey;
+  background-color: $bgHighlight;
   border-radius: 4px;
   padding: 0 15px;
   margin-right: 60px;
@@ -117,5 +117,11 @@ body {
 }
 
 .pointer {
+  cursor: pointer;
+}
+
+
+.clickable {
+  display: inline-block;
   cursor: pointer;
 }

@@ -8,7 +8,7 @@
     return url;
   }
 
-  $: ({ header: { primary }, badgeNumber, username, balance, avatarUrl } = get(clientStore));
+  $: ({ username, balance, avatarUrl } = get(clientStore));
 </script>
 
 <div class="dropdownProfile">

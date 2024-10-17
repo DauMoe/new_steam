@@ -8,12 +8,14 @@
   import CloseIcon from "$lib/assets/icons/Close.png";
   import FriendsIcon from "$lib/assets/icons/Friends.png";
   import RingIcon from "$lib/assets/icons/Ring.png";
+	import Clickable from "../Clickable.svelte";
 
   export let iconName: string = "";
   export let size: number = 24;
   export let className: string = "";
   export let style = "";
   export let border = false;
+  export let onClick = (e: MouseEvent) => {};
 
   function getSrcFromIconName(name: string, size: number) {
     const customStyle = style ?? `width: ${size}px; height: ${size}px`;
@@ -71,20 +73,27 @@
 
 {#if iconName}
   {#if border}
-    <div class={`iconWrapper  ${className}`}>
+    <Clickable 
+      className={`iconWrapper ${className}`}
+      {onClick}
+    >
       <img 
         src={iconInfo?.src} 
         alt={iconName} 
         class={`resizeImage`} 
         style={iconInfo?.customStyle}
       />
-    </div>
+    </Clickable>
   {:else}
-    <img 
-      src={iconInfo?.src} 
-      alt={iconName} 
-      class={`resizeImage ${className}`} 
-      style={iconInfo?.customStyle}
-    />
+    <Clickable
+      {onClick}
+    >
+      <img 
+        src={iconInfo?.src} 
+        alt={iconName} 
+        class={`resizeImage ${className}`} 
+        style={iconInfo?.customStyle}
+      />
+    </Clickable>
   {/if}
 {/if}

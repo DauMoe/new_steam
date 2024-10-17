@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import "$lib/styles/root.scss";
-  import { Client, PrimaryHeader } from "$lib/components";
+  import { Client, SecondaryHeader } from "$lib/components";
 </script>
 
 <Client/>
-<PrimaryHeader/>
+<SecondaryHeader/>
