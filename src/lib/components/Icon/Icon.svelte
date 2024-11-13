@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowLeft, ArrowRight, Logo, FullsizeLogo, DashLogo, CloseLogo, CopyLogo, FriendsLogo, RingLogo } from "./IconName";
+	import { ArrowLeft, ArrowRight, Logo, FullsizeLogo, DashLogo, CloseLogo, CopyLogo, FriendsLogo, RingLogo, SettingLogo } from "./IconName";
   import ArrowLeftIcon from "$lib/assets/icons/ArrowLeft.png";
   import LogoIcon from "$lib/assets/icons/BigLogo.png";
   import FullsizeLogoIcon from "$lib/assets/icons/FullsizeLogo.svg";
@@ -8,6 +8,7 @@
   import CloseIcon from "$lib/assets/icons/Close.png";
   import FriendsIcon from "$lib/assets/icons/Friends.png";
   import RingIcon from "$lib/assets/icons/Ring.png";
+  import SettingIcon from "$lib/assets/icons/Settings.png";
 	import Clickable from "../Clickable.svelte";
 
   export let iconName: string = "";
@@ -63,6 +64,11 @@
       case RingLogo:
         return {
           src: RingIcon,
+          customStyle
+        }
+      case SettingLogo:
+        return {
+          src: SettingIcon,
           customStyle
         }
     }

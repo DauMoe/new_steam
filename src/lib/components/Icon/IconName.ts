@@ -7,3 +7,4 @@ export const CopyLogo = "CopyLogo";
 export const CloseLogo = "CloseLogo";
 export const FriendsLogo = "FriendsLogo";
 export const RingLogo = "RingLogo";
+export const SettingLogo = "SettingLogo";

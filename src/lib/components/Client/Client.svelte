@@ -1,5 +1,6 @@
 <script lang="ts">
   import "$lib/styles/_client.scss";
+  import { goto } from "$app/navigation";
 	import { ArrowLeft, ArrowRight, CloseLogo, CopyLogo, DashLogo, FriendsLogo, FullsizeLogo, RingLogo } from "$lib/components/Icon/IconName";
 	import ClientItem from "./ClientItem.svelte";
 	import Icon from "$lib/components/Icon/Icon.svelte";
@@ -7,14 +8,16 @@
 	import { clientStore } from "$lib/utils/store";
 	import Notification from "../Icon/Notification.svelte";
 	import DropdownProfile from "../DropdownProfile.svelte";
+	import Clickable from "../Clickable.svelte";
 
   function handleClientClick(selectedItem: any) {
     client.forEach(item => {
       item.selected = (item.id === selectedItem.id);
     })
+    goto(selectedItem.path);
   }
 
-  $: ({ header: { client }, badgeNumber, username, balance } = get(clientStore));
+$: ({ header: { client }, badgeNumber, username, balance } = get(clientStore));
 </script>
 
 <div class="clientWrapper">
@@ -22,9 +25,7 @@
     <Icon iconName={ArrowLeft} className="w-24"/>
     <Icon iconName={ArrowRight} className="w-24"/>
   </div>
-  <a href="/">
-    <Icon iconName={FullsizeLogo} className="logo"/>
-  </a>
+  <Icon iconName={FullsizeLogo} className="logo" onClick={_ => goto("/")}/>
 
   <div class="primaryHeaderLeft">
     {#if Array.isArray(client)}
@@ -40,8 +41,14 @@
     <Icon iconName={FriendsLogo} border className={"mr-10"}/>
     <Notification {badgeNumber} />
     <DropdownProfile />
-    <span class={"headerText"}>Help</span>
-    <span class={"headerText dropdown"}>View</span>
+
+    <Clickable>
+      <span class={"headerText"}>Help</span>
+    </Clickable>
+    <Clickable>
+      <span class={"headerText dropdown"}>View</span>
+    </Clickable>
+
     <Icon iconName={DashLogo} className={"w-20 mr-15"}/>
     <Icon iconName={CopyLogo} className={"w-20 mr-15"}/>
     <Icon iconName={CloseLogo} className={"w-20 mr-25"}/>

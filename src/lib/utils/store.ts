@@ -6,9 +6,10 @@ export const clientStore = writable({
       id: 1,
       title: "store",
       selected: true,
+      path: "/",
       items: [{
         id: 1,
-        title: "Home"
+        title: "Home",
       }, {
         id: 2,
         title: "Browser"
@@ -32,6 +33,7 @@ export const clientStore = writable({
       id: 2,
       title: "community",
       selected: false,
+      path: "/community",
       items: [{
         id: 1,
         title: "Home"
@@ -46,16 +48,19 @@ export const clientStore = writable({
       id: 3,
       title: "$username",
       selected: false,
+      path: '/profile',
       items: null
     }, {
       id: 4,
       title: "library",
       selected: false,
+      path: '/library',
       items: null
     }, {
       id: 5,
       title: "downloads",
       selected: false,
+      path: '/downloads',
       items: null
     }],
   },

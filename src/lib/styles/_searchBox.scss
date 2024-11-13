@@ -1,6 +1,39 @@
+.searchBox-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
 .searchBox {
-  width: 100px;
-  height: 45px;
-  background-color: aqua;
+  width: 507px;
+  height: 44px;
+  background-color: #0E141B;
+  color: #fff;
   border-radius: 4px;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 45px;
+  font-size: 15px;
+
+  &::placeholder {
+    color: #76808C;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  input[type="text"] {
+    margin-left: 20px;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  width: 20px;
+  height: 20px;
 }

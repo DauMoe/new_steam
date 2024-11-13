@@ -12,7 +12,7 @@ body {
   background-size: contain;
 }
 
-@for $i from 1 through 30 {
+@for $i from 0 through 30 {
   .w-#{$i} {
     width: #{$i}px;
   }
@@ -33,6 +33,14 @@ body {
 
   .pr-#{$i} {
     padding-right: #{$i}px;
+  }
+
+  .p-#{$i} {
+    padding: #{$i}px
+  }
+
+  .m-#{$i} {
+    margin: #{$i}px
   }
 }
 
@@ -124,4 +132,13 @@ body {
 .clickable {
   display: inline-block;
   cursor: pointer;
+}
+
+.linkItem {
+  text-decoration: none;
+  color: $textMain;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
