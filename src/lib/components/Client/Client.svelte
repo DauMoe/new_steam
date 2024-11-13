@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>[Un-official] Steam :: Store</title> 
+</svelte:head>
+
 <script lang="ts">
   import "$lib/styles/_client.scss";
   import { goto } from "$app/navigation";
@@ -31,7 +35,11 @@ $: ({ header: { client }, badgeNumber, username, balance } = get(clientStore));
     {#if Array.isArray(client)}
       {#each client as clientItem}
         {#key `primary_${clientItem.id}`}
-          <ClientItem name={clientItem.title} selected={clientItem.selected} onClick={_ => handleClientClick(clientItem)}/>
+          <ClientItem 
+            name={clientItem.title} 
+            selected={clientItem.selected} 
+            onClick={_ => handleClientClick(clientItem)}
+          />
         {/key}
       {/each}
     {/if}
