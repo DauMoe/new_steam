@@ -1,5 +1,5 @@
 import { get } from "svelte/store"
-import { clientStore } from "./store"
+import { clientStore } from "../store/user"
 
 export const getSecondaryHeaderItem = (id: number) => {
   const { header: { client } } = get(clientStore);

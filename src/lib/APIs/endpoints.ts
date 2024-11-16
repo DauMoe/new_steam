@@ -1,0 +1,1 @@
+export const HOME_STORE_ENDPOINT = "api/store_home.json";
