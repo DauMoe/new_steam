@@ -1,3 +1,5 @@
+@use "./breakpoint.scss" as *;
+
 .banner {
   width: 100vw;
   text-align: center;
@@ -7,5 +9,13 @@
     background-size: contain;  
     width: 80%;
     height: 100%;
+  }
+}
+
+@media (max-width: $breakpoints_desktop-lg) {
+  .banner {
+    & img {
+      width: 100%;
+    }
   }
 }

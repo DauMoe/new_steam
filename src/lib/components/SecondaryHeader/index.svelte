@@ -3,7 +3,7 @@
 	import { get } from 'svelte/store';
 	import LibraryHeader from './LibraryHeader.svelte';
 	import StoreHeader from './StoreHeader.svelte';
-	import { clientStore } from '$lib/utils/store';
+	import { clientStore } from '$lib/store/user';
 	
   $: ({ header: { client } } = get(clientStore));
 	$: selectedItem = client.find(item => item.selected) || client[0];

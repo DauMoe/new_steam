@@ -4,16 +4,17 @@
 	import { onMount } from "svelte";
 	import { getHomeData } from "$lib/APIs/home";
 	import { homeStore } from "$lib/store/home";
+	import { Carousel } from "$lib/components/Carousel";
 
   onMount(() => {
     getHomeData();
   });
 
   $: ({ items } = $homeStore);
-  $: console.log(items);  
 </script>
 
 <div class="storeWrapper">
+
   <!-- Header Region -->
   <Client/>
   <SecondaryHeader/>
@@ -26,7 +27,10 @@
         primary_url={item.image_url} 
       />
     {:else}
-      <!-- <Carousel type={item.type} /> -->
+      <Carousel 
+        title={item.title}
+        type={item.type} 
+      />
     {/if}
   {/each}
 </div>
