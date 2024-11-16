@@ -1,0 +1,11 @@
+.banner {
+  width: 100vw;
+  text-align: center;
+
+  & img {
+    background-repeat: no-repeat;
+    background-size: contain;  
+    width: 80%;
+    height: 100%;
+  }
+}
