@@ -9,7 +9,7 @@
 	import ClientItem from "./ClientItem.svelte";
 	import Icon from "$lib/components/Icon/Icon.svelte";
 	import { get } from "svelte/store";
-	import { clientStore } from "$lib/utils/store";
+	import { clientStore } from "$lib/store/user";
 	import Notification from "../Icon/Notification.svelte";
 	import DropdownProfile from "../DropdownProfile.svelte";
 	import Clickable from "../Clickable.svelte";

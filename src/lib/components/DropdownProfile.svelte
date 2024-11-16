@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { clientStore } from "$lib/utils/store";
+	import { clientStore } from "$lib/store/user";
 	import { get } from "svelte/store";
   import Logo from "$lib/assets/icons/MediumLogo.png";
 

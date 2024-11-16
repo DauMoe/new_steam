@@ -1,7 +1,7 @@
 @use "./colors.scss" as *;
 
 .secondaryHeader {
-  width: 100%;
+  width: calc(100% - 20px);
   height: 60px;
   background-color: $bgTertiary;
   padding: 0 10px;
