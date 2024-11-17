@@ -1,6 +1,9 @@
 @use "./colors.scss" as *;
 
 .clientWrapper {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
   width: 100%;
   margin: 0;
   height: 60px;

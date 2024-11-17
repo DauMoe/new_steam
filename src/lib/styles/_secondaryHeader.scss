@@ -1,6 +1,9 @@
 @use "./colors.scss" as *;
 
 .secondaryHeader {
+  position: sticky;
+  top: 60px;
+  z-index: 1;
   width: calc(100% - 20px);
   height: 60px;
   background-color: $bgTertiary;
