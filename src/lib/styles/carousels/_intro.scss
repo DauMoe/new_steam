@@ -1,5 +1,50 @@
+@use "../colors.scss" as *;
+
 .introCard {
   &__wrapper {
-    position: relative
+    position: relative;
+    border-radius: 5px;
+    background-color: $bgMain;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+  }
+
+  &__primary {
+    width: 60%;
+    margin-right: 15px;
+    & img {
+      width: 100%;
+    }
+  }
+
+  &__subContent {
+    width: 40%;
+    color: $textMain;
+
+    & > h1 {
+      font-weight: 600;
+    }
+
+    & > p {
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px;
+  
+      & > img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__tags {
+      display: flex;
+      margin-top: 10px;
+    }
   }
 }

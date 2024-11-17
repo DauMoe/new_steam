@@ -11,26 +11,34 @@
   });
 
   $: ({ items } = $homeStore);
+  $: console.log("items", items);
+  
 </script>
 
-<div class="storeWrapper">
+<div class="home__wrapper">
 
   <!-- Header Region -->
   <Client/>
   <SecondaryHeader/>
 
   <!-- Carousel Region -->
-  {#each items as item}
-    {#if item.type === "banner"}
-      <Banner 
-        url={item.url}
-        primary_url={item.image_url} 
-      />
-    {:else}
-      <Carousel 
-        title={item.title}
-        type={item.type} 
-      />
-    {/if}
-  {/each}
+  <div class="home__content">
+    {#each items as item}
+      {#if item.type === "banner"}
+        <Banner 
+          url={item.url}
+          primary_url={item.image_url} 
+        />
+      {:else}
+        <div class="home__content--carousel">
+          <Carousel 
+            title={item.title}
+            type={item.type}
+            data={item.data}
+          />
+        </div>
+      {/if}
+    {/each}
+  </div>
+  
 </div>

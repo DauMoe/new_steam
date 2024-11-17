@@ -6,8 +6,15 @@
 
   export let title: string | undefined;
   export let type: string | undefined;
+  export let data: Array<CarouselItem> | [];
 </script>
 
-<CarouselController {title}>
-  <IntroCard onClick={() => {console.log("CLICK TO CARD")}}/>
-</CarouselController>
+{#if data.length > 0}
+  <CarouselController {title}>
+    {#each data as item}
+      <IntroCard
+        data={item}
+      />
+    {/each}
+  </CarouselController>
+{/if}

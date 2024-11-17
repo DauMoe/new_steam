@@ -45,14 +45,22 @@ body {
   }
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .iconWrapper {
-  width: 56px;
-  height: 37px;
-  border-radius: 4px;
-  background-color: $bgHighlight;
   display: inline-block;
   line-height: 34px; // Set line-height equal to height
   text-align: center; // Center horizontally if desired
+
+  &--border {
+    @extend .iconWrapper;
+    width: 56px;
+    height: 37px;
+    border-radius: 4px;
+    background-color: $bgHighlight;
+  }
 
   & > img {
     vertical-align: middle;

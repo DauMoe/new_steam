@@ -1,4 +1,4 @@
-const HOST_URL = __API_BASE_URL__;
+import { ensureHost } from "$lib/utils/utils";
 
 enum RequestMethod {
   GET = "GET",
@@ -13,22 +13,22 @@ const defaultOptions: RequestInit = {
   },
 };
 
-function getUrl(endpoint: string): string {
-  return encodeURI(`${HOST_URL}/${endpoint}`);
-}
-
 function request<T>(
   endpoint: string, 
   config: RequestInit = {},
+  overrideHandler: Function | undefined = undefined,
   method: RequestMethod = RequestMethod.GET, 
 ): Promise<T> {
   return new Promise((resolve, reject) => {
-    fetch(getUrl(endpoint), {
+    fetch(ensureHost(endpoint), {
       ...defaultOptions,
       ...config,
       method
     })
-      .then(response => response.json())
+      .then(response => {
+        if (overrideHandler) return overrideHandler();
+        return response.json();
+      })
       .then(resolve)
       .catch(reject);
   });

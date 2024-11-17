@@ -25,6 +25,6 @@
   <div class="storeHeaderRight">
     <Clickable onClick={_ => goto('/wishlist')} className="linkItem">Wishlist</Clickable>
     <Clickable onClick={_ => goto('/cart')} className="linkItem">Cart</Clickable>
-    <Icon iconName={SettingLogo} border className='setting'/>
+    <Icon iconName={SettingLogo} border containerClassName='squareIcon'/>
   </div>
 </div>

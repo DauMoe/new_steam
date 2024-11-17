@@ -1,21 +1,9 @@
-@use "./breakpoint.scss" as *;
-
 .banner {
-  width: 100vw;
-  text-align: center;
 
   & img {
     background-repeat: no-repeat;
     background-size: contain;  
-    width: 80%;
+    width: 100%;
     height: 100%;
-  }
-}
-
-@media (max-width: $breakpoints_desktop-lg) {
-  .banner {
-    & img {
-      width: 100%;
-    }
   }
 }

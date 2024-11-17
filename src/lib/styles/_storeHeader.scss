@@ -1,10 +1,32 @@
 @use "sass:color";
 @use "./colors.scss" as *;
+@use "./breakpoint.scss" as *;
 
-.storeWrapper {
-  position: relative;
-  min-height: 100vh;
-  background-image: linear-gradient(to bottom, $bgMain 70vh, $bgSecondary);
+.home {
+  &__wrapper {
+    position: relative;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, $bgMain 70vh, $bgSecondary);
+  }
+
+  &__content {
+    width: 80%;
+    margin: auto;
+
+    &--carousel {
+      width: 70%;
+      margin: auto;
+    }
+  }
+}
+
+
+@media (max-width: $breakpoints_desktop-lg) {
+  .home {
+    &__content {
+      width: 100%;
+    }
+  }
 }
 
 .storeHeaderWrapper {
@@ -30,7 +52,7 @@
   }
 }
 
-.setting {
+.squareIcon {
   background-color: rgba($textDim, 10%);
   width: 40px;
   height: 40px;

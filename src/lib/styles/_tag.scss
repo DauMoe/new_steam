@@ -1,0 +1,15 @@
+@use "./colors.scss" as *;
+
+.tag {
+  &__wrapper {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 8px 13px;
+    background-color: $bgHighlight;
+
+    span {
+      color: $textDim;
+      font-size: 14px;
+    }
+  }
+}

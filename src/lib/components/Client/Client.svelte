@@ -26,8 +26,8 @@ $: ({ header: { client }, badgeNumber, username, balance } = get(clientStore));
 
 <div class="clientWrapper">
   <div class="navigator">
-    <Icon iconName={ArrowLeft} className="w-24"/>
-    <Icon iconName={ArrowRight} className="w-24"/>
+    <Icon iconName={ArrowLeft} containerClassName="w-24"/>
+    <Icon iconName={ArrowRight} containerClassName="w-24"/>
   </div>
   <Icon iconName={FullsizeLogo} className="logo" onClick={_ => goto("/")}/>
 
@@ -46,7 +46,7 @@ $: ({ header: { client }, badgeNumber, username, balance } = get(clientStore));
   </div>
 
   <div class="primaryHeaderRight">
-    <Icon iconName={FriendsLogo} border className={"mr-10"}/>
+    <Icon iconName={FriendsLogo} border containerClassName={"mr-10"}/>
     <Notification {badgeNumber} />
     <DropdownProfile />
 
@@ -57,8 +57,8 @@ $: ({ header: { client }, badgeNumber, username, balance } = get(clientStore));
       <span class={"headerText dropdown"}>View</span>
     </Clickable>
 
-    <Icon iconName={DashLogo} className={"w-20 mr-15"}/>
-    <Icon iconName={CopyLogo} className={"w-20 mr-15"}/>
-    <Icon iconName={CloseLogo} className={"w-20 mr-25"}/>
+    <Icon iconName={DashLogo} containerClassName={"w-20 mr-15"}/>
+    <Icon iconName={CopyLogo} containerClassName={"w-20 mr-15"}/>
+    <Icon iconName={CloseLogo} containerClassName={"w-20 mr-25"}/>
   </div>
 </div>

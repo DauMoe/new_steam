@@ -8,3 +8,5 @@ export const CloseLogo = "CloseLogo";
 export const FriendsLogo = "FriendsLogo";
 export const RingLogo = "RingLogo";
 export const SettingLogo = "SettingLogo";
+export const AddLogo = "AddLogo";
+export const WindowsLogo = "WindowsLogo";

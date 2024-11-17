@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowLeft, ArrowRight, Logo, FullsizeLogo, DashLogo, CloseLogo, CopyLogo, FriendsLogo, RingLogo, SettingLogo } from "./IconName";
+  import * as Icon from "./IconName";
   import ArrowLeftIcon from "$lib/assets/icons/ArrowLeft.png";
   import LogoIcon from "$lib/assets/icons/BigLogo.png";
   import FullsizeLogoIcon from "$lib/assets/icons/FullsizeLogo.svg";
@@ -9,66 +9,80 @@
   import FriendsIcon from "$lib/assets/icons/Friends.png";
   import RingIcon from "$lib/assets/icons/Ring.png";
   import SettingIcon from "$lib/assets/icons/Settings.png";
+  import AddIcon from "$lib/assets/icons/Add.png";
+  import WindowsIcon from "$lib/assets/icons/Windows.png";
 	import Clickable from "../Clickable.svelte";
 
   export let iconName: string = "";
   export let size: number = 24;
   export let className: string = "";
-  export let style = "";
+  export let containerClassName: string = "";
+  export let style: string | undefined = undefined;
   export let border = false;
+  export let disable: boolean = true;
   export let onClick = (e: MouseEvent) => {};
 
   function getSrcFromIconName(name: string, size: number) {
     const customStyle = style ?? `width: ${size}px; height: ${size}px`;
     switch(name) {
-      case ArrowLeft:
+      case Icon.ArrowLeft:
         return {
           src: ArrowLeftIcon,
           customStyle
         };
-      case ArrowRight:
+      case Icon.ArrowRight:
         return {
           src: ArrowLeftIcon,
           customStyle: `transform: rotate(180deg); ${customStyle}`
         }
-      case Logo:
+      case Icon.Logo:
         return {
           src: LogoIcon,
           customStyle
         }
-      case FullsizeLogo:
+      case Icon.FullsizeLogo:
         return {
           src: FullsizeLogoIcon,
           customStyle: `height: ${size}px`
         }
-      case CopyLogo:
+      case Icon.CopyLogo:
         return {
           src: CopyIcon,
           customStyle
         }
-      case CloseLogo:
+      case Icon.CloseLogo:
         return {
           src: CloseIcon,
           customStyle
         }
-      case DashLogo:
+      case Icon.DashLogo:
         return {
           src: DashIcon,
           customStyle
         }
-      case FriendsLogo:
+      case Icon.FriendsLogo:
         return {
           src: FriendsIcon,
           customStyle
         }
-      case RingLogo:
+      case Icon.RingLogo:
         return {
           src: RingIcon,
           customStyle
         }
-      case SettingLogo:
+      case Icon.SettingLogo:
         return {
           src: SettingIcon,
+          customStyle
+        }
+      case Icon.AddLogo:
+        return {
+          src: AddIcon,
+          customStyle
+        }
+      case Icon.WindowsLogo:
+        return {
+          src: WindowsIcon,
           customStyle
         }
     }
@@ -78,28 +92,16 @@
 </script>
 
 {#if iconName}
-  {#if border}
-    <Clickable 
-      className={`iconWrapper ${className}`}
-      {onClick}
-    >
-      <img 
-        src={iconInfo?.src} 
-        alt={iconName} 
-        class={`resizeImage`} 
-        style={iconInfo?.customStyle}
-      />
-    </Clickable>
-  {:else}
-    <Clickable
-      {onClick}
-    >
-      <img 
-        src={iconInfo?.src} 
-        alt={iconName} 
-        class={`resizeImage ${className}`} 
-        style={iconInfo?.customStyle}
-      />
-    </Clickable>
-  {/if}
+  <Clickable
+    {onClick}
+    {disable}
+    className={`iconWrapper${border ? '--border' : ''} ${containerClassName}`}
+  >
+    <img 
+      src={iconInfo?.src} 
+      alt={iconName} 
+      class={`resizeImage ${className}`} 
+      style={iconInfo?.customStyle}
+    />
+  </Clickable>
 {/if}
