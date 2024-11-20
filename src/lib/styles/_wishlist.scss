@@ -1,0 +1,27 @@
+@use "./colors.scss" as *;
+
+.wishlist {
+  &__wrapper {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 20px;
+    transition-property: all;
+    transition-duration: 150ms;
+    transition-timing-function: linear;
+  
+    & > span {
+      margin-right: 8px;
+    }
+  }
+
+  &__icon {
+    width: 20px !important;
+    height: 17px !important;
+  }
+}
+
+.favorite {
+  background-color: $favoritePink;
+}

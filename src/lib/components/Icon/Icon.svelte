@@ -11,6 +11,8 @@
   import SettingIcon from "$lib/assets/icons/Settings.png";
   import AddIcon from "$lib/assets/icons/Add.png";
   import WindowsIcon from "$lib/assets/icons/Windows.png";
+  import HeartIcon from "$lib/assets/icons/Heart.png";
+  import SolidHeartIcon from "$lib/assets/icons/SolidHeart.png";
 	import Clickable from "../Clickable.svelte";
 
   export let iconName: string = "";
@@ -63,12 +65,12 @@
       case Icon.FriendsLogo:
         return {
           src: FriendsIcon,
-          customStyle
+          customStyle: `${customStyle}; height: 16px`
         }
       case Icon.RingLogo:
         return {
           src: RingIcon,
-          customStyle
+          customStyle: `width: 20px; height: 22px`
         }
       case Icon.SettingLogo:
         return {
@@ -85,6 +87,16 @@
           src: WindowsIcon,
           customStyle
         }
+      case Icon.HeartLogo:
+        return {
+          src: HeartIcon,
+          customStyle
+        }
+      case Icon.SolidHeartLogo:
+        return {
+          src: SolidHeartIcon,
+          customStyle
+        }
     }
   }
 
@@ -97,11 +109,13 @@
     {disable}
     className={`iconWrapper${border ? '--border' : ''} ${containerClassName}`}
   >
+    <slot name="leftIcon"/>
     <img 
       src={iconInfo?.src} 
       alt={iconName} 
       class={`resizeImage ${className}`} 
       style={iconInfo?.customStyle}
     />
+    <slot name="rightIcon"/>
   </Clickable>
 {/if}

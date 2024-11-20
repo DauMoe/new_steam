@@ -1,8 +1,10 @@
 <script lang="ts">
   import "$lib/styles/carousels/_intro.scss";
+	import Clickable from "../Clickable.svelte";
 	import Icon from "../Icon/Icon.svelte";
 	import { AddLogo, WindowsLogo } from "../Icon/IconName";
 	import Tag from "../Tag.svelte";
+	import Wishlist from "../Wishlist.svelte";
 
   export let onClick: Function = () => {};
   export let data: CarouselItem;
@@ -42,6 +44,25 @@
         iconName={WindowsLogo}
         containerClassName='ml-auto'
       />
+    </div>
+
+    <div class="introCard__purchase">
+      <Wishlist 
+        fullWidth 
+        favorite={data.in_wishlist}
+      />
+
+      <div class="introCard__purchase-price">
+        <b class={data.sale_price ? "introCard__purchase-price-sale" : ""}>{data.price}</b>
+        {#if data.sale_price}
+          <b>{data.sale_price}</b>
+        {/if}
+        <Clickable
+          className="introCard__purchase-buyButton"
+        >
+          <span>Buy Now</span>
+        </Clickable>
+      </div>
     </div>
 
   </div>

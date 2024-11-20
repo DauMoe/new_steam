@@ -10,3 +10,5 @@ export const RingLogo = "RingLogo";
 export const SettingLogo = "SettingLogo";
 export const AddLogo = "AddLogo";
 export const WindowsLogo = "WindowsLogo";
+export const HeartLogo = "HeartLogo";
+export const SolidHeartLogo = "SolidHeartLogo";

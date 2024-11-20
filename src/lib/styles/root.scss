@@ -141,6 +141,7 @@ body {
 .clickable {
   display: inline-block;
   cursor: pointer;
+  user-select: none;
 }
 
 .linkItem {
