@@ -6,15 +6,21 @@
 
   export let title: string | undefined;
   export let type: string | undefined;
-  export let data: Array<CarouselItem> | [];
+  export let data: CarouselItem[];
+
+  function getCardType(type: string | undefined) {
+    switch(type) {
+      case "intro_carousel":
+        return IntroCard;
+      default:
+        return IntroCard;
+    }
+  }
+
+  $: cardType = getCardType(type);
 </script>
 
-{#if data.length > 0}
-  <CarouselController {title}>
-    {#each data as item}
-      <IntroCard
-        data={item}
-      />
-    {/each}
-  </CarouselController>
-{/if}
+<CarouselController 
+  {data}
+  {cardType}
+/>

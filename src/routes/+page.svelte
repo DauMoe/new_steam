@@ -11,8 +11,7 @@
   });
 
   $: ({ items } = $homeStore);
-  $: console.log("items", items);
-  
+  // $: console.log("items", items);
 </script>
 
 <div class="home__wrapper">
@@ -23,22 +22,23 @@
 
   <!-- Carousel Region -->
   <div class="home__content">
-    {#each items as item}
-      {#if item.type === "banner"}
-        <Banner 
-          url={item.url}
-          primary_url={item.image_url} 
-        />
-      {:else}
-        <div class="home__content--carousel">
-          <Carousel 
-            title={item.title}
-            type={item.type}
-            data={item.data}
+    <div class="home__content--carousel">
+      {#each items as item}
+        {#if item.type === "banner"}
+          <Banner 
+            url={item.url}
+            primary_url={item.image_url} 
           />
-        </div>
-      {/if}
-    {/each}
-  </div>
-  
+        {:else}
+          <div class="home__content--carousel">
+            <Carousel 
+              title={item.title}
+              type={item.type}
+              data={item.data}
+            />
+          </div>
+        {/if}
+      {/each}
+    </div>
+  </div>  
 </div>
